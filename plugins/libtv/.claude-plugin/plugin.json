@@ -1,0 +1,12 @@
+{
+  "name": "libtv",
+  "version": "1.0.0",
+  "description": "在 Claude Code 中使用 LibTV 画布、媒体生成与创作工作流（社区适配版）。",
+  "author": {
+    "name": "LiblibAI",
+    "url": "https://www.liblib.tv"
+  },
+  "homepage": "https://www.liblib.tv",
+  "repository": "https://github.com/zhuangjinjin/claude-marketplace",
+  "keywords": ["libtv", "creative", "video", "mcp"]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "libtv": {
+      "type": "http",
+      "url": "https://mcp.liblib.tv/mcp"
+    }
+  }
+}
