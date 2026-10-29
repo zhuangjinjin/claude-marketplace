@@ -7,7 +7,10 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN = ROOT / "plugins/libtv"
-SKILLS = {"libtv-to-treatment", "libtv-blender-live-action", "music-driven-product-ad"}
+SKILLS = {
+    "libtv-to-treatment", "libtv-blender-live-action",
+    "music-driven-product-ad", "libtv-video-production",
+}
 
 
 def read_json(path):

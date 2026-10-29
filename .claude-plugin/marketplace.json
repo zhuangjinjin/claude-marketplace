@@ -1,7 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "libtv-claude",
-  "owner": { "name": "zhuangjinjin" },
+  "owner": {
+    "name": "zhuangjinjin"
+  },
   "metadata": {
     "description": "LibTV 的 Claude Code 社区适配版插件目录。"
   },
@@ -9,8 +11,8 @@
     {
       "name": "libtv",
       "source": "./plugins/libtv",
-      "version": "1.0.0",
-      "description": "通过 LibTV Remote MCP 使用画布、媒体生成和三个创作工作流。",
+      "version": "1.1.0",
+      "description": "通过 LibTV Remote MCP 使用画布、媒体生成和四个创作工作流。",
       "category": "productivity"
     }
   ]

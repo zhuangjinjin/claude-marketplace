@@ -2,7 +2,7 @@
 
 ## 目标与方案选择
 
-将上游 Codex 分发包转换为 Claude Code 原生插件市场，保留三个创作工作流及全部媒体资产。不实现新的 MCP server，不代理 OAuth，也不改变 LibTV 服务端行为。
+将上游 Codex 分发包转换为 Claude Code 原生插件市场，保留原有三个创作工作流及全部媒体资产，并增加一个 MCP 短片制作工作流。不实现新的 MCP server，不代理 OAuth，也不改变 LibTV 服务端行为。
 
 ## 核心组件与关键决策
 
@@ -34,3 +34,7 @@ Swift 脚本涉及录屏及输入控制，须用户授权系统权限。插件�
 ## 静态扫描复核
 
 安全扫描器将 `trim_wav_silence.py:48` 的 `wave.open(str(args.source), "rb")` 标为路径遍历。该工具是用户显式传入任意本地路径的离线 CLI，不存在服务端目录沙箱或不可信网络参数，读取该路径正是其功能；输出已拒绝源目标相同和已有目标，并以 `xb` 创建文件。因此该项按误报处理，不为消除告警而破坏 CLI 的文件访问功能。上游 Python 脚本的函数长度和复杂度警告保留，本次不扩大为算法重构。
+
+### 2026-10-29 — 1.1.0 新增 MCP 短片制作
+
+新增 `libtv-video-production`，来源于 PomeloR611/libtv-video-agent 的 MIT 技能包。只复用制作方法，重写执行层为类型化 MCP：OAuth、UUID 定位、实时模型契约、Node 引用、稳定幂等键和 task_id 恢复。不携带旧 CLI 指令或凭据。图片/视频统一遵守明确生成授权；禁止付费探针和自动重生。版本同时更新插件与市场条目；沿用 skills 目录自动发现。原有三个 Skill 不变。新增技能内部保留独立许可证，不给整个插件补造许可。详见[技能设计](skills/libtv-video-production/DESIGN.md)。
